@@ -1,41 +1,21 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import ClientOnly from "../components/ClientOnly";
 import Countries from "../components/Countries";
+import Layout from "../components/Layout";
 
 export default function ClientSide() {
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head>
-        <title>Create Next App</title>
+        <title>Client Side Rendering</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <h1>Client Side Rendering</h1>
 
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <ClientOnly>
-          <Countries />
-        </ClientOnly>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      <ClientOnly>
+        <Countries />
+      </ClientOnly>
+    </Layout>
   );
 }
